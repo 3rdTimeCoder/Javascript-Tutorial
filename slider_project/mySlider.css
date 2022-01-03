@@ -1,0 +1,382 @@
+:root {
+  /* dark shades of primary color */
+  --crl--primary-1: hsl(205, 86%, 17%);
+  --crl--primary-2: hsl(205, 77%, 27%);
+  --crl--primary-3: hsl(205, 72%, 37%);
+  --crl--primary-4: hsl(205, 63%, 48%);
+
+  /* primary/main color */
+  --crl--primary-5: #49a6e9;
+
+  /* lighter shades of primary color */
+  --crl--primary-6: hsl(205, 89%, 70%);
+  --crl--primary-7: hsl(205, 90%, 76%);
+  --crl--primary-8: hsl(205, 86%, 81%);
+  --crl--primary-9: hsl(205, 90%, 88%);
+  --crl--primary-10: hsl(205, 100%, 96%);
+
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+
+  /* other colors */
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --crl-gold: #c59d5f;
+  --clr-black: #222;
+  --clr-secondary: hsla(182, 63%, 54%);
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --darker-shadow: 20px 45px 25px rgba(0, 0, 0, 0.6);
+  --darker-shadow2: 20px 45px 25px rgba(0, 0, 0, 0.4);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--ff-secondary);
+  background-color: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-family: var(--ff-primary);
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+@media screen and (max-width: 475px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.25rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  h4 {
+    font-size: 0.8rem;
+  }
+  body {
+    font-size: 0.7rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 0.7;
+  }
+}
+/* global classes */
+.btn {
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--clr-black);
+  padding: 0.375rem 0.75rem;
+  letter-spacing: var(--spacing);
+  display: inline-block;
+  transition: var(--transition);
+  font-size: 0.875rem;
+  border: 2px solid var(--clr-black);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+}
+.btn:hover {
+  background: var(--clr-white);
+  color: var(--clr-secondary);
+}
+/* section */
+.section {
+  padding-bottom: 5rem 0;
+}
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 35rem;
+  margin-top: 8rem;
+  text-align: center;
+}
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+  }
+}
+
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+/* ==========Slider project========== */
+.slider {
+  width: 85vw;
+  max-width: var(
+    --fixed-width
+  ); /*make sure sections never greater than this width. So 85vw will not be applied if 85vw is > --fixed-width. --fixed-width will be applied.*/
+  margin: 0 auto;
+  margin-top: 3rem;
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+}
+
+/* Hide slider scrollbar */
+.slider::-webkit-scrollbar {
+  display: none; /*for chrome*/
+}
+.slider {
+  -ms-overflow-style: none; /*IE AND EDGE*/
+  scrollbar-width: none; /*Firefox*/
+}
+/*  */
+
+.reviews {
+  margin-bottom: 2rem;
+}
+.reviews h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reviews span {
+  font-size: 0.85em;
+  color: var(--crl--primary-5);
+  margin-right: 1rem;
+}
+.img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: var(--clr-white);
+  padding: 0.25rem;
+  border: 1px solid var(--clr-grey-7);
+  box-shadow: var(--dark-shadow);
+}
+h4 {
+  text-transform: uppercase;
+  color: var(--crl--primary-5);
+  margin-top: 0.5rem;
+}
+.title {
+  margin-bottom: 1.25rem;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  color: var(--crl--primary-8);
+}
+.text {
+  color: var(--clr-white);
+  line-height: 1.5;
+  max-width: 93%;
+  margin: 0 auto;
+  letter-spacing: 1px;
+  padding: 0 0.5rem;
+}
+.quote-icon {
+  font-size: 3rem;
+  margin-top: 2rem;
+  color: var(--crl--primary-5);
+}
+/* set buttons */
+/* to place my buttons on the side of my image/section, I must set the position in .slider to relative */
+.btn {
+  position: absolute;
+  top: 175px;
+  background: var(--clr-grey-5);
+  color: var(--clr-white);
+  padding: 0.25rem 0.35rem;
+  border: transparent;
+  border-radius: 0.25rem;
+  box-shadow: var(--dark-shadow);
+  outline: none;
+  cursor: pointer;
+}
+.next-btn {
+  right: -0.5rem;
+}
+.prev-btn {
+  left: -0.5rem;
+}
+
+@media screen and (min-width: 800px) {
+  .next-btn {
+    right: -4rem;
+  }
+  .prev-btn {
+    left: -4rem;
+  }
+  .btn {
+    font-size: 1.3rem;
+    padding: 0.35rem 0.5rem;
+  }
+  .quote-icon {
+    font-size: 4rem;
+  }
+}
+
+/* slider specific css */
+.slide-container {
+  display: flex;
+  position: relative; /*because all my slides will have a position absolute*/
+  height: 450px;
+  /*also a must for absolute positioning of my slides*/
+  max-width: 35rem;
+  margin: 0 auto;
+}
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  box-shadow: var(--darker-shadow);
+  background: var(--clr-grey-4);
+  z-index: 3;
+}
+.slide.next {
+  transform: translateX(150%);
+  width: 20rem;
+  height: 80%;
+  top: 3rem;
+  box-shadow: var(--darker-shadow2);
+  background: var(--clr-grey-1);
+}
+.slide.last {
+  transform: translateX(-75%);
+  width: 20rem;
+  height: 80%;
+  top: 3rem;
+  box-shadow: var(--darker-shadow2);
+  background: var(--clr-grey-1);
+}
+
+/* adjust size of next and last */
+.slide.next,
+.slide.last {
+  font-size: 0.8rem;
+}
+.slide.next > .quote-icon,
+.slide.last > .quote-icon {
+  font-size: 0.9rem;
+}
+.slide.next > img,
+.slide.last > img {
+  width: 90px;
+  height: 90px;
+}
+img {
+  margin-top: 1.5rem;
+}
+
+@media screen and (max-width: 1072px) {
+  .slide.next,
+  .slide.last {
+    opacity: 0;
+    box-shadow: none;
+  }
+  .slider {
+    overflow-x: hidden;
+  }
+  .slide.active {
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 495px) {
+  .slider {
+    width: 80%;
+  }
+  .quote-icon {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: var(--crl--primary-5);
+  }
+}
